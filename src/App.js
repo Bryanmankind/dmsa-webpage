@@ -1,52 +1,51 @@
 import './App.css';
 import Logo from "./image/Logo.png";
 import { Information } from './Information';
-import {Body} from "./Body";
+import { Body } from "./Body";
 import { PrayerRequest } from './PrayerRequest';
 import { Programs } from './Programs';
-import { Blog} from './Blog';
-import { Footer } from './Footer'; 
+import { Blog } from './Blog';
+import { Footer } from './Footer';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Body/>
-      <Footer/>
-      <Programs />
-      <PrayerRequest/>
-      <Information/> 
-      <Blog/>
-    </div>  
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/about" element={<Information />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Footer />
+        <PrayerRequest />
+      </div>
+    </Router>
   );
 }
 
-function Navbar () {
+function Navbar() {
   return (
-    <div class="Navbar">
-        <nav>
-            <div class="logo">
-                <img src={Logo} alt='Logo'/>
-            </div>
-            <div class="header">
-                <ul><li><a href="index.html">HOME</a></li></ul>
-                <ul><li><a href="programs.html">PROGRAMS</a></li></ul>
-                <ul><li><a href="about.html">ABOUT US</a></li></ul>
-                <ul><li><a href="give.html">GIVE</a></li></ul>
-                <ul><li><a href="blog.html">BLOG</a></li></ul>
-            </div>
-            <div>
-                <button id="nav-but">MEMBERSHIP</button>
-            </div>
-        </nav>
+    <div className="Navbar">
+      <nav>
+        <div className="logo">
+          <img src={Logo} alt='Logo' />
+        </div>
+        <div className="header">
+          <ul><li><Link to="/">HOME</Link></li></ul>
+          <ul><li><Link to="/programs">PROGRAMS</Link></li></ul>
+          <ul><li><Link to="/about">ABOUT US</Link></li></ul>
+          <ul><li><Link to="/give">GIVE</Link></li></ul>
+          <ul><li><Link to="/blog">BLOG</Link></li></ul>
+        </div>
+        <div>
+          <button id="nav-but">MEMBERSHIP</button>
+        </div>
+      </nav>
     </div>
-  )
+  );
 }
 
-
-
-
-
-
 export default App;
-

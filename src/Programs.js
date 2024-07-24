@@ -1,3 +1,4 @@
+import React from 'react';
 import DIVINE_3 from "./image/DIVINE_3.jpg";
 import DIVINE_1 from "./image/DIVINE_1.jpg";
 import DIVINE_2 from "./image/DIVINE_2.jpg";

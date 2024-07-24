@@ -1,3 +1,4 @@
+import React from 'react';
 import blog from "./image/blog.webp";
 export function Blog () {
     return (
