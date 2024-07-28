@@ -13,12 +13,7 @@
 
 body {
   color: azure;
-  background-image: url(https://cdn.pixabay.com/photo/2023/12/08/10/25/church-8437403_1280.jpg);
-  position: relative;
-  z-index:1;
-  background-size: cover;
-  background-repeat: none;
-  background-position: center;
+  
 }
 
 
@@ -88,7 +83,11 @@ margin-top: 20px;
   position: relative; 
   overflow: hidden; 
   height: 75vh;
-
+  background-image: url(https://cdn.pixabay.com/photo/2023/12/08/10/25/church-8437403_1280.jpg);
+  z-index:1;
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
 }
 
 .container::before {
@@ -242,12 +241,14 @@ z-index: 3;
 /* --------------------------------------- Programs Page ---------------------------------------- */
 
 .programs {
-display: inline;
-padding: 15px;
-grid-gap: 150px;
-margin-top: 40px;
-justify-content: center;
-align-items: center;
+  display: inline;
+  padding: 15px;
+  grid-gap: 150px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  
+
 }
 
 .Sub-title{
