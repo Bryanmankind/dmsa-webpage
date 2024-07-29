@@ -7,11 +7,15 @@ import { Programs } from './Programs';
 import { Blog } from './Blog';
 import { Footer } from './Footer';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 function App() {
   const [showPrayerRequest, setshowPrayerRequest] = useState(false);
   const [showPlanToVist, setshowPlanToVist] = useState(false);
+  const prayerRequestRef = useRef(null);
+  const planToAttendRef = useRef(null);
+
+
 
   const togglePrayerRequest = () => {
     setshowPrayerRequest(!showPrayerRequest);
@@ -20,6 +24,24 @@ function App() {
   const togglePlanToVisit = () => {
     setshowPlanToVist(!showPlanToVist);
   };
+
+  const clickOutSide = (e) => {
+    if (prayerRequestRef.current && !prayerRequestRef.current.contains(e.target)) {
+    setshowPrayerRequest(false);
+
+    }
+  }
+
+  useEffect(() => {
+    if (showPrayerRequest) {
+      document.addEventListener('mousedown',clickOutSide);
+    } else {
+      document.removeEventListener('mousedown', clickOutSide);
+    }
+    return () => {
+      document.removeEventListener('mousedown', clickOutSide);
+    };
+  }, [showPrayerRequest]);
 
   return (
     <Router>
@@ -33,7 +55,7 @@ function App() {
         </Routes>
         <Footer togglePrayerRequest={togglePrayerRequest}
           togglePlanToVisit={togglePlanToVisit}/>
-        {showPrayerRequest && <PrayerRequest />}
+        {showPrayerRequest && <PrayerRequest ref={prayerRequestRef}/>}
         {showPlanToVist && <Information />}
       </div>
     </Router>
