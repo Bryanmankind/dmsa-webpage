@@ -7,8 +7,20 @@ import { Programs } from './Programs';
 import { Blog } from './Blog';
 import { Footer } from './Footer';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+  const [showPrayerRequest, setshowPrayerRequest] = useState(false);
+  const [showPlanToVist, setshowPlanToVist] = useState(false);
+
+  const togglePrayerRequest = () => {
+    setshowPrayerRequest(!showPrayerRequest);
+  };
+
+  const togglePlanToVisit = () => {
+    setshowPlanToVist(!showPlanToVist);
+  };
+
   return (
     <Router>
       <div>
@@ -19,8 +31,10 @@ function App() {
           <Route path="/about" element={<Information />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
-        <Footer />
-        <PrayerRequest />
+        <Footer togglePrayerRequest={togglePrayerRequest}
+          togglePlanToVisit={togglePlanToVisit}/>
+        {showPrayerRequest && <PrayerRequest />}
+        {showPlanToVist && <Information />}
       </div>
     </Router>
   );

@@ -180,14 +180,6 @@ font-size: 20px;
 background: #990736c6;
 }
 
-.hidden {
-display: none;
-}
-
-.visible {
-display: block;
-}
-
 form {
 position: absolute;
 top: 50%;
@@ -248,11 +240,7 @@ z-index: 3;
   align-items: center;
 }
 
-.Sub-title{
-margin-left: 50px;
-font-weight: 400%;
-font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .sections-1, .sections-2 {
   display: flex;
@@ -357,6 +345,12 @@ font-family: Arial, Helvetica, sans-serif;
 
 /* --------------------------------------- About Page ---------------------------------------- */
 
+.Sub-title{
+  margin-left: 50px;
+  font-weight: 400%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: maroon;
+}
 
 .about-col-1  {
   display: grid;
@@ -545,9 +539,6 @@ margin: 0px;
   margin: left;
 }
 
-form input, form textarea {
-  
-}
 
 form .btn2 {
   padding: 14px 60px;
