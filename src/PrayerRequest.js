@@ -11,7 +11,7 @@ export const PrayerRequest = React.forwardRef((props, ref) => {
     };
 
     try {
-      const response = await axios.post('/api/prayer-request', data);
+      const response = await axios.post('/form-prayer', data); // Ensure the endpoint matches your Express route
       alert(response.data);
     } catch (error) {
       console.error(error);
@@ -20,7 +20,7 @@ export const PrayerRequest = React.forwardRef((props, ref) => {
   };
 
   return (
-    <form id="form" className="hidden" method="post" onSubmit={handleSubmit} ref={ref}>
+    <form id="form" method="post" onSubmit={handleSubmit} ref={ref}>
       <input type="email" placeholder="Your Email" name="user_email" required />
       <textarea rows="6" placeholder="Your Request" name="prayer_request" required></textarea>
       <button type="submit">Submit</button>

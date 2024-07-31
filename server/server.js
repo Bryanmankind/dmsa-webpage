@@ -31,23 +31,6 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Define Schemas and Models
-const prayerRequestSchema = new mongoose.Schema({
-  user_email: String,
-  prayer_request: String,
-});
-
-const planToVisitSchema = new mongoose.Schema({
-  user_name: String,
-  user_email: String,
-  plan_to_visit: String,
-});
-
-const PrayerRequest = mongoose.model('PrayerRequest', prayerRequestSchema);
-const PlanToVisit = mongoose.model('PlanToVisit', planToVisitSchema);
-
-// Routes
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

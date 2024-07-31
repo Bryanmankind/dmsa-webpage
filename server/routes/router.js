@@ -1,26 +1,33 @@
 const express = require("express");
 const router = express.Router();
+const { PrayerRequest, PlanToVisit } = require("../models/schemas");
 
-router.post('/prayer-request', async (req, res) => {
-    const { user_email, prayer_request } = req.body;
-    const newPrayerRequest = new PrayerRequest({ user_email, prayer_request });
-    try {
-      await newPrayerRequest.save();
-      res.status(201).send('Prayer request saved');
-    } catch (error) {
-      res.status(400).send('Error saving prayer request');
-    }
-  });
-  
-router.post('/plan-to-visit', async (req, res) => {
-    const { user_name, user_email, plan_to_visit } = req.body;
-    const newPlanToVisit = new PlanToVisit({ user_name, user_email, plan_to_visit });
-    try {
-      await newPlanToVisit.save();
-      res.status(201).send('Plan to visit saved');
-    } catch (error) {
-      res.status(400).send('Error saving plan to visit');
-    }
-  });
+// Route to handle prayer requests
+router.post('/form-prayer', async (req, res) => {
+  const { user_email, prayer_request } = req.body;
+  const newPrayerRequest = new PrayerRequest({ user_email, prayer_request });
+
+  try {
+    await newPrayerRequest.save();
+    res.status(201).send('Prayer request saved');
+  } catch (error) {
+    console.error('Error saving prayer request:', error);
+    res.status(400).send('Error saving prayer request');
+  }
+});
+
+// Route to handle plan to visit requests
+router.post('/form-visit', async (req, res) => {
+  const { user_name, user_email } = req.body;
+  const newPlanToVisit = new PlanToVisit({ user_name, user_email });
+
+  try {
+    await newPlanToVisit.save();
+    res.status(201).send('Plan to visit saved');
+  } catch (error) {
+    console.error('Error saving plan to visit:', error);
+    res.status(400).send('Error saving plan to visit');
+  }
+});
 
 module.exports = router;
