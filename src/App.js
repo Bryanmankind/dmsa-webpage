@@ -1,8 +1,8 @@
 import './App.css';
-import axios from 'axios';
 import Logo from "./image/Logo.png";
 import { Information } from './Information';
 import { Body } from "./Body";
+import {About} from "./About";
 import { PrayerRequest } from './PrayerRequest';
 import { Programs } from './Programs';
 import { Blog } from './Blog';
@@ -68,7 +68,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Body />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/about" element={<Information />} />
+          <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
         <Footer togglePrayerRequest={togglePrayerRequest}
