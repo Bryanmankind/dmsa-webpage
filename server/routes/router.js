@@ -18,8 +18,8 @@ router.post('/form-prayer', async (req, res) => {
 
 // Route to handle plan to visit requests
 router.post('/form-visit', async (req, res) => {
-  const { user_name, user_email } = req.body;
-  const newPlanToVisit = new PlanToVisit({ user_name, user_email });
+  const {user, time, contact, alone, location} = req.body;
+  const newPlanToVisit = new PlanToVisit({user, time, contact, alone, location });
 
   try {
     await newPlanToVisit.save();

@@ -7,10 +7,10 @@ const requestFrom = new mongoose.Schema({
 });
 
 const planToVisit = new mongoose.Schema({
-    name : {type: String, trim: true},
+    user : {type: String, trim: true},
     time : {type: String, trim: true},
     contact : {type: Number, trim: true},
-    NotAlone : {type: String, trim: true},
+    alone : {type: String, trim: true},
     location : {type: String, trim: true},
 })
 

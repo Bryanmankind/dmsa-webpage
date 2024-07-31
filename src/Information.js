@@ -6,10 +6,10 @@ const Information = forwardRef((props, ref) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = {
-      user_name: formData.get('name'),
-      plan_time: formData.get('time'),
+      user: formData.get('user'),
+      time: formData.get('time'),
       contact: formData.get('contact'),
-      not_alone: formData.get('NotAlone'),
+      alone: formData.get('alone'),
       location: formData.get('location')
     };
 
@@ -24,10 +24,10 @@ const Information = forwardRef((props, ref) => {
 
   return (
     <form id="form-visit" method="post" onSubmit={handleSubmit} ref={ref}>
-      <input type="text" placeholder="Your Name" name="name" required />
+      <input type="text" placeholder="Your Name" name="user" required />
       <input type="text" placeholder="When do you plan to worship with us?" name="time" required />
       <input type="number" placeholder="Please give us your phone number" name="contact" required />
-      <input type="text" placeholder="Are you coming alone?" name="NotAlone" required />
+      <input type="text" placeholder="Are you coming alone?" name="alone" required />
       <input type="text" placeholder="Tell us your location?" name="location" required />
       <button type="submit">Submit</button>
     </form>
