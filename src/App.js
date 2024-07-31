@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import Logo from "./image/Logo.png";
 import { Information } from './Information';
 import { Body } from "./Body";
@@ -31,6 +32,12 @@ function App() {
 
     }
   }
+  const clickOutSideToAttend = (e) => {
+    if ( planToAttendRef.current && !planToAttendRef.current.contains(e.target)) {
+      setshowPlanToVist(false);
+
+    }
+  }
 
   useEffect(() => {
     if (showPrayerRequest) {
@@ -42,6 +49,17 @@ function App() {
       document.removeEventListener('mousedown', clickOutSide);
     };
   }, [showPrayerRequest]);
+
+  useEffect(() => {
+    if (showPlanToVist) {
+      document.addEventListener('mousedown',clickOutSideToAttend);
+    } else {
+      document.removeEventListener('mousedown', clickOutSideToAttend);
+    }
+    return () => {
+      document.removeEventListener('mousedown', clickOutSideToAttend);
+    };
+  }, [showPlanToVist]);
 
   return (
     <Router>
@@ -56,7 +74,7 @@ function App() {
         <Footer togglePrayerRequest={togglePrayerRequest}
           togglePlanToVisit={togglePlanToVisit}/>
         {showPrayerRequest && <PrayerRequest ref={prayerRequestRef}/>}
-        {showPlanToVist && <Information />}
+        {showPlanToVist && <Information ref={planToAttendRef}/>}
       </div>
     </Router>
   );
