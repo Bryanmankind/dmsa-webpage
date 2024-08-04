@@ -7,7 +7,7 @@ export function Give () {
                 <img src="https://cdn.pixabay.com/photo/2019/10/24/14/26/hand-4574474_1280.jpg" alt=""/>
                 <h2>PARTNER WITH US</h2>
             </div>
-            <div>
+            <div class="sec2">
                 <h2>About Giving </h2>
                 <p> Giving is a powerful way to make a significant difference in the world for Christ. 
                     By joining our monthly partner program, you can help us extend our reach, support vital projects, and bring hope to those in need. 
