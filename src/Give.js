@@ -9,7 +9,7 @@ export function Give () {
             </div>
             <div>
                 <h2>About Giving </h2>
-                <p>Giving is a powerful way to make a significant difference in the world for Christ. 
+                <p> Giving is a powerful way to make a significant difference in the world for Christ. 
                     By joining our monthly partner program, you can help us extend our reach, support vital projects, and bring hope to those in need. 
                     Learn more about how you can become a part of this transformative mission below.</p>
             </div>
