@@ -147,8 +147,6 @@ line-height: 1.5;
 font-size: 20px;
 }
 
-
-
 .Body .active-1 {
   display:  none;
 }
@@ -383,16 +381,35 @@ justify-content: center;
 }
 /* ............................................... Give .................................................. */
 
-.section-give{
-display: flex;
-justify-content: center;
-height: 40vh;
+.give{
+  display: inline;
+  justify-content: center;
 }
 
-.section-give img {
-  width: 1000px;
-  height: 40vh;
-  weight: 500;
+.give .sec1 img {
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+}
+
+.give .sec1 img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.give .sec1 h2 {
+  font-weight: 100%;
+  font-size: 90px;
+  color: brown;
+  z-index: 2;
 }
 
 .section-give h3 {
@@ -455,7 +472,6 @@ margin-top: 30px;
   border-radius: 20px;
   margin-left: 40px;
   margin-top: 40px;
-
 }
 
 .blog-col-2 {

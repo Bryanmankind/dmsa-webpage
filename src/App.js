@@ -3,6 +3,7 @@ import Logo from "./image/Logo.png";
 import { Information } from './Information';
 import { Body } from "./Body";
 import {About} from "./About";
+import {Give} from "./Give";
 import { PrayerRequest } from './PrayerRequest';
 import { Programs } from './Programs';
 import { Blog } from './Blog';
@@ -69,6 +70,7 @@ function App() {
           <Route path="/" element={<Body />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/about" element={<About />} />
+          <Route path="/give" element={<Give />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
         <Footer togglePrayerRequest={togglePrayerRequest}

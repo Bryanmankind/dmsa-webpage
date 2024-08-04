@@ -24,7 +24,7 @@ router.post('/form-visit', async (req, res) => {
   try {
     await newPlanToVisit.save();
     res.status(201).send('Plan to visit saved');
-  } catch (error) {
+  } catch (error) { 
     console.error('Error saving plan to visit:', error);
     res.status(400).send('Error saving plan to visit');
   }
