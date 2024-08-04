@@ -13,7 +13,7 @@ export function Give () {
                     By joining our monthly partner program, you can help us extend our reach, support vital projects, and bring hope to those in need. 
                     Learn more about how you can become a part of this transformative mission below.</p>
             </div>
-            <div>
+            <div class="sec3">
                 <h2>Become a Monthly Partner or Make a One-Time Donation</h2>
             </div>
         </div>
