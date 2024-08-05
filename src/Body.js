@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from "./image/Logo.png";
 
 export function Body () {
     return (

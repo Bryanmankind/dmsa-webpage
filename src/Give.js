@@ -1,12 +1,11 @@
 import React from "react";
 import { useFlutterwave } from 'flutterwave-react-v3';
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
-require('dotenv').config();
 
 export function Give () { 
 
     const config = {
-        public_key: process.env.PUBLIC_KEY,
+        public_key: process.env.REACT_APP_PUBLIC_KEY,
         tx_ref: Date.now(),
         amount: 100,
         currency: 'NGN',
