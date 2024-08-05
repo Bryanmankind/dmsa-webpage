@@ -450,6 +450,13 @@ z-index: 3;
 .sec3 {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+}
+
+.sec3 h2 {
+  color: brown;
 }
 
 /* ----------------------------------------------- Blog -------------------------------------------------- */

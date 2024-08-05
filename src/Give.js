@@ -1,8 +1,42 @@
-import React from "react"
+import React from "react";
+import { useFlutterwave } from 'flutterwave-react-v3';
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
+require('dotenv').config();
 
-export function Give () {
+export function Give () { 
+
+    const config = {
+        public_key: process.env.PUBLIC_KEY,
+        tx_ref: Date.now(),
+        amount: 100,
+        currency: 'NGN',
+        payment_options: 'card,mobilemoney,ussd',
+        customer: {
+          email: 'user@gmail.com',
+          phone_number: '070********',
+          name: 'john doe',
+        },
+        customizations: {
+          title: 'my Payment Title',
+          description: 'Payment for items in cart',
+          logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+        },
+      };
+
+        useFlutterwave(config);
+
+        const fwConfig = {
+            ...config,
+            text: 'Pay with Flutterwave!',
+            callback: (response) => {
+               console.log(response);
+              closePaymentModal() 
+            },
+            onClose: () => {},
+          };
+
     return (
-        <div class="give">
+        <div clasName="give">
             <div class="sec1">
                 <img src="https://cdn.pixabay.com/photo/2019/10/24/14/26/hand-4574474_1280.jpg" alt=""/>
                 <h2>PARTNER WITH US</h2>
@@ -15,6 +49,7 @@ export function Give () {
             </div>
             <div class="sec3">
                 <h2>Become a Monthly Partner or Make a One-Time Donation</h2>
+                <FlutterWaveButton {...fwConfig} />
             </div>
         </div>
     )
