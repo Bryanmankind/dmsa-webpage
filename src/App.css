@@ -37,9 +37,11 @@ z-index: 3;
 /* --------------------------------------------------- NavBar ---------------------------------------------------- */
 
 .Navbar {
-height: 80px;
-width: 100%;
-background-color: white;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 3;
 }
 
 nav {
@@ -395,6 +397,7 @@ z-index: 3;
   width: 100%;
   height: 75vh;
   object-fit: cover;
+  display: block;
 }
 
 .sec1::before {

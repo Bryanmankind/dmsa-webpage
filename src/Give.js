@@ -35,7 +35,7 @@ export function Give () {
           };
 
     return (
-        <div clasName="give">
+        <div className="give">
             <div className="sec1">
                 <img src="https://cdn.pixabay.com/photo/2019/10/24/14/26/hand-4574474_1280.jpg" alt=""/>
                 <h2>PARTNER WITH US</h2>
