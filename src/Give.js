@@ -51,6 +51,6 @@ export function Give () {
                 
                 <FlutterWaveButton {...fwConfig} />
             </div>
-        </div>
+      </div>
     )
 }

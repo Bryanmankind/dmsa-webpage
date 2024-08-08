@@ -5,9 +5,9 @@ import DIVINE_2 from "./image/DIVINE_2.jpg";
 
 export function Programs () {
     return (
-      <div class="programs">
-          <div class="sections-1">
-              <div class="section-1-left">
+      <div className="programs">
+          <div className="sections-1">
+              <div className="section-1-left">
                 <img src={DIVINE_3} alt=''/>
               </div>
               <div class="section-1-right">
