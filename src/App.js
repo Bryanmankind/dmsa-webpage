@@ -96,9 +96,6 @@ function Navbar() {
           <ul><li><Link to="/give">GIVE</Link></li></ul>
           <ul><li><Link to="/blog">BLOG</Link></li></ul>
         </div>
-        <div>
-          <button id="nav-but">MEMBERSHIP</button>
-        </div>
       </nav>
     </div>
   );
