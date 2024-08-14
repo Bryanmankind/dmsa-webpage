@@ -205,16 +205,16 @@ form input, form textarea {
 }
 
 button {
-margin-top: 10px;
-width:150px;
-height:40px;
-color: white;
-border-radius: 6px;
-outline: none;
-background: #ff004f;
-cursor: pointer;
-margin-left: 100px;
-border: 0;
+  margin-top: 10px;
+  width:150px;
+  height:40px;
+  color: white;
+  border-radius: 6px;
+  outline: none;
+  background: #ff004f;
+  cursor: pointer;
+  margin-left: 100px;
+  border: 0;
 }
 
 #overlay.show {
@@ -585,7 +585,6 @@ margin: 0px;
   height: 90%;
   margin: left;
 }
-
 
 form .btn2 {
   padding: 14px 60px;
