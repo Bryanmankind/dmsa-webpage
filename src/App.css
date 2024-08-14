@@ -54,8 +54,8 @@ nav {
 }
 
 .header {
-padding: 20px;
-margin-left: 500px;
+  padding: 20px;
+  margin-left: 400px;
 }
 
 .header ul {
@@ -64,16 +64,16 @@ list-style: none;
 display: inline-flex;
 }
 
+
 .header ul li a {
-color: brown;
-text-decoration: none;
-font-size: 15px;
-font-family: "Montserrat", sans-serif;
-font-weight: 600;
+  color: brown;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 0 15px;
 }
-#nav-but{
-margin-top: 20px;
-}
+
 /* ------------------------------------------------- Landing Page ---------------------------------------------- */
 
 .container {
@@ -263,12 +263,14 @@ z-index: 3;
   height: 60vh;
   border-radius: 25px;
   margin-left: 120px;
+  animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
 .section-1-right{
   flex-basis: 40%;
   margin-top: 70px;
   margin-left: 160px;
+  animation: slideInFromRight 1s ease-out forwards;
 }
 
 .section-1-right h1 {
