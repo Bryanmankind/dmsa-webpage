@@ -49,6 +49,7 @@ export function Give () {
             <div className="sec3">
                 <h2>Become a Monthly Partner or Make a One-Time Donation</h2>
                 
+                
                 <FlutterWaveButton {...fwConfig} />
             </div>
       </div>
