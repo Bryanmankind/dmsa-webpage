@@ -23,7 +23,7 @@ const Information = forwardRef((props, ref) => {
   };
 
   return (
-    <form id="form-visit" method="post" onSubmit={handleSubmit} ref={ref}>
+    <form method="post" onSubmit={handleSubmit} ref={ref}>
       <input type="text" placeholder="Your Name" name="user" required />
       <input type="text" placeholder="When do you plan to worship with us?" name="time" required />
       <input type="number" placeholder="Please give us your phone number" name="contact" required />
