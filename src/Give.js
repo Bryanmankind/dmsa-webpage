@@ -5,11 +5,12 @@ import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
 export function Give() {
   // State for the form inputs
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(100); // Default amount set to 100
-
+  
   // Configuration for the Flutterwave payment
   const fwConfig = {
     public_key: process.env.REACT_APP_PUBLIC_KEY,
@@ -31,8 +32,11 @@ export function Give() {
     callback: (response) => {
       console.log(response);
       closePaymentModal();
+      setIsFormVisible(false);
     },
-    onClose: () => {},
+    onClose: () => {
+      setIsFormVisible(false);
+    },
   };
 
   return (
@@ -51,33 +55,39 @@ export function Give() {
       </div>
       <div className="sec3">
         <h2>Become a Monthly Partner or Make a One-Time Donation</h2>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <input
-            type="text"
-            placeholder="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="phone number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
-          <FlutterWaveButton {...fwConfig} />
-        </form>
+        <button id="pay-but" onClick={() => setIsFormVisible(!isFormVisible)}>Give</button>
+        {isFormVisible && (
+          <>
+            <div className="overlay" onClick={() => setIsFormVisible(false)}></div>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="text"
+              placeholder="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="phone number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+            <FlutterWaveButton {...fwConfig} />
+          </form>
+          </>
+        )}
       </div>
     </div>
   );
