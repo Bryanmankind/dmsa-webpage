@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Protest+Riot&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url("https://kit.fontawesome.com/7ba47254ee.js");
 
 *{
   padding: 0;
@@ -123,7 +124,6 @@ display: inline-flex;
   height: 250px;
   width: 300px;
   margin: 5px;
-  border-radius: 10px;
 }
 
 .welcome h1 {
@@ -663,8 +663,17 @@ form .btn2 {
 }
 
 /* ------------------------------ small screen -------------------------------------------------- */
+nav .fa-solid {
+  display: none;
+}
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
+
+.header ul {
+  margin: 10px;
+  list-style: none;
+  display: inline-flex;
+}
 
   .flash-messages {
     margin-left: 10px;
@@ -691,15 +700,17 @@ form .btn2 {
     text-align: center;
   }
 
+
   .header ul {
+    display: flex;
     flex-direction: column;
-    gap: 10px;
   }
 
   .container {
     height: auto;
     padding: 20px 0;
   }
+  
 
   .welcome h1 {
     font-size: 28px;
@@ -711,6 +722,9 @@ form .btn2 {
 
   .welcome p {
     font-size: 16px;
+  }
+  #imgs{
+    margin-left: 30px;
   }
 
   #imgs img {
@@ -790,6 +804,15 @@ form .btn2 {
   .contact-left, .contact-right {
     flex-basis: 100%;
     margin: 10px 0;
+  }
+
+  .blog-col-1{
+    margin-right: 80px ;
+  }
+
+  .Sub-title{
+    font-size: 25px;
+    font-weight: 100%;
   }
 
   .copyright {

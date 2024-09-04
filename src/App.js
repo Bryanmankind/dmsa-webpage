@@ -10,6 +10,7 @@ import { Blog } from './Blog';
 import { Footer } from './Footer';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react'; 
+
     
 function App() {
   const [showPrayerRequest, setshowPrayerRequest] = useState(false);
@@ -39,6 +40,13 @@ function App() {
 
     }
   }
+
+  // const closeMenu = () => {
+    
+  // }
+  // const openMenu = () => {
+
+  // }
 
   useEffect(() => {
     if (showPrayerRequest) {
@@ -95,7 +103,9 @@ function Navbar() {
           <ul><li><Link to="/about">ABOUT US</Link></li></ul>
           <ul><li><Link to="/give">GIVE</Link></li></ul>
           <ul><li><Link to="/blog">BLOG</Link></li></ul>
+          <i class="fa-solid fa-circle-xmark"></i>
         </div>
+        <i class="fa-solid fa-bars"></i>
       </nav>
     </div>
   );
